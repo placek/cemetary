@@ -1,6 +1,6 @@
-ActiveAdmin.register AdminUser, as: "Administrator" do
+ActiveAdmin.register AdminUser, as: "Admin" do
 
-  menu label: "Admin"
+  menu label: "Administratorzy"
 
   index do
     column :email
@@ -13,7 +13,7 @@ ActiveAdmin.register AdminUser, as: "Administrator" do
   filter :email
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs do
       f.input :email
       f.input :password
       f.input :password_confirmation
