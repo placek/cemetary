@@ -4,9 +4,13 @@
   %head
     %title Cemetery
   = stylesheet_link_tag 'application', media: 'all'
+  = stylesheet_link_tag params[:controller]
   = javascript_include_tag 'application'
   = csrf_meta_tags
   = yield :metatags
 
 %body
-  = yield
+  %section#content
+    - if flash[:notice]
+      .notice= flash[:notice]
+    = yield

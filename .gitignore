@@ -8,6 +8,10 @@
 /log/*.log
 /tmp
 
+# Ignore compiled assets
+.sass-cache/
+public/assets/
+
 # Other ignores
 *~
 *.sw[op]
