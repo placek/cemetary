@@ -1,0 +1,19 @@
+%section.sepulchres
+  %header
+    %h1 Listing sepulchres
+
+  %table
+    %tr
+      %th Decedent
+      %th Birth
+      %th Burial
+      %th History
+      %th
+
+    - @sepulchres.each do |sepulchre|
+      %tr
+        %td= sepulchre.decedent
+        %td= sepulchre.birth
+        %td= sepulchre.burial
+        %td= sepulchre.history
+        %td= link_to 'Show', sepulchre

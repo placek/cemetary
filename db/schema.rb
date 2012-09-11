@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910120249) do
+ActiveRecord::Schema.define(:version => 20120911193519) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,5 +45,17 @@ ActiveRecord::Schema.define(:version => 20120910120249) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "sepulchres", :force => true do |t|
+    t.string   "decedent",   :null => false
+    t.date     "birth"
+    t.date     "burial",     :null => false
+    t.text     "history"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sepulchres", ["burial"], :name => "index_sepulchres_on_burial"
+  add_index "sepulchres", ["decedent"], :name => "index_sepulchres_on_decedent"
 
 end
