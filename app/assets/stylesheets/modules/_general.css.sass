@@ -1,10 +1,32 @@
-body
-  background: image-url('background.png') no-repeat right top fixed $background-color
-
-#content
+@mixin canvas
   width: $content-width
-  margin: $big-space auto $big-space auto
-  padding: $big-space
+  padding: $medium-space
   border: 1px solid $border-color
   background: $content-background-color
-  @include rounded(5px)
+
+
+body
+  background: image-url('main-bg.png') repeat-y right top fixed $background-color
+  margin: 0
+  padding: 0
+  font-family: "Trebuchet MS", Helvetica, Jamrul, sans-serif
+
+  section
+
+    #header
+      margin: 0 auto $medium-space auto
+      text-align: center
+      @include canvas
+      @include bottom_rounded($medium-space)
+
+    #content
+      margin: 0 auto 0 auto
+      @include canvas
+      @include rounded($medium-space)
+
+    #footer
+      text-align: center
+      font-size: 0.7em
+      margin: $medium-space auto 0 auto
+      @include canvas
+      @include rounded($medium-space)

@@ -1,8 +1,8 @@
 // general
 
 $text-color: #000
-$border-color: #000
-$background-color: #fff
+$border-color: #222
+$background-color: #333
 $content-background-color: rgba(255, 255, 255, 0.7)
 $content-width: 900px
 
@@ -16,3 +16,19 @@ $big-space: 20px
   border-radius: $radius
   -moz-border-radius: $radius
   -webkit-border-radius: $radius
+
+@mixin top_rounded($radius: 10px)
+  border-top-left-radius: $radius
+  border-top-right-radius: $radius
+  -moz-border-radius-topleft: $radius
+  -moz-border-radius-topright: $radius
+  -webkit-border-top-left-radius: $radius
+  -webkit-border-top-right-radius: $radius
+
+@mixin bottom_rounded($radius: 10px)
+  border-bottom-left-radius: $radius
+  border-bottom-right-radius: $radius
+  -moz-border-radius-bottomleft: $radius
+  -moz-border-radius-bottomright: $radius
+  -webkit-border-bottom-left-radius: $radius
+  -webkit-border-bottom-right-radius: $radius
