@@ -1,19 +1,9 @@
 %section.sepulchres
-  %header
-    %h1 Listing sepulchres
-
-  %table
-    %tr
-      %th Decedent
-      %th Birth
-      %th Burial
-      %th History
-      %th
-
+  %dl
     - @sepulchres.each do |sepulchre|
-      %tr
-        %td= sepulchre.decedent
-        %td= sepulchre.birth
-        %td= sepulchre.burial
-        %td= sepulchre.history
-        %td= link_to 'Show', sepulchre
+      %dt
+        = link_to sepulchre.decedent, sepulchre
+        %span
+          .birth= sepulchre.birth
+          .burial= sepulchre.burial
+      %dd= truncate(sepulchre.history, length: 500)
