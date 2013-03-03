@@ -12,12 +12,13 @@ gem "will_paginate"
 gem "state_machine"
 gem "formtastic"
 gem "wirble", require: false
-gem "therubyracer", require: "v8"
 
 group :assets do
-  gem "sass-rails",   "~> 3.2.3"
-  gem "coffee-rails", "~> 3.2.1"
-  gem "uglifier", ">= 1.0.3"
+  gem "therubyracer", require: "v8"
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "coffee-script-source", "~> 1.4.0"
+  gem "uglifier"
   gem "compass-rails"
 end
 

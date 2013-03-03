@@ -1,1 +1,10 @@
-Cmentarz 2.0
+%section
+  %figure
+    = render partial: "home/navigation"
+
+  %p
+    = link_to t("links.lutheran_part"), "#lutheran", id: "lutheran_part_url"
+    |
+    = link_to t("links.orthodox_part"), "#orthodox", id: "orthodox_part_url"
+    |
+    = link_to t("links.catholic_part"), "#catholic", id: "catholic_part_url"

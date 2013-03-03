@@ -1,0 +1,31 @@
+@import modules/macros
+
+section#content
+  text-align: center
+
+  path
+    fill: $background-color
+    stroke: $text-color
+    stroke-width: 1px
+    cursor: pointer
+
+    &.cross
+      fill: $text-color
+      stroke-width: 0
+
+    &.part
+      fill: $theme-color
+      stroke: $border-color
+
+  .selected
+
+    .cross
+      fill: $highlight-color
+      stroke-width: 0
+
+    .part
+      fill: $theme-color
+      stroke: $highlight-color
+
+    #rose path
+      stroke: $highlight-color

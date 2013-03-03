@@ -2,20 +2,17 @@
 !!!
 %html
   %head
-    %title Cemetery
-  = stylesheet_link_tag 'application', media: 'all'
-  = stylesheet_link_tag params[:controller]
-  = javascript_include_tag 'application'
-  = csrf_meta_tags
-  = yield :metatags
+    = stylesheet_link_tag "application", media: "all"
+    = stylesheet_link_tag params[:controller]
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = yield :metatags
 
 %body
-  %section
-    %header#header
-      = render partial: 'layouts/header'
-    #content
+  %article
+    %header#header= render partial: "layouts/header"
+    %section#content
       - if flash[:notice]
         .notice= flash[:notice]
       = yield
-    %footer#footer
-      = render partial: 'layouts/footer'
+    %footer#footer= render partial: "layouts/footer"

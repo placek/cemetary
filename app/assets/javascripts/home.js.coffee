@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $("#content p").hide()
+
+  $("#lutheran_part, #orthodox_part, #catholic_part").mouseenter ->
+    $(this).attr("class", "selected")
+    $(this).parent().append($(this))
+
+  $("#lutheran_part, #orthodox_part, #catholic_part").mouseleave ->
+    $(this).attr("class", "")
+
+  $("#lutheran_part, #orthodox_part, #catholic_part").click ->
+    window.location.href = $("#" + $(this).attr("id") + "_url").attr("href");
