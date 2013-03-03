@@ -93,6 +93,7 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    friendly_id (4.0.9)
     fssm (0.2.10)
     haml (4.0.0)
       tilt
@@ -216,6 +217,7 @@ DEPENDENCIES
   debugger
   factory_girl_rails
   formtastic
+  friendly_id
   haml
   jbuilder
   jquery-rails

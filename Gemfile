@@ -11,6 +11,7 @@ gem "sass"
 gem "will_paginate"
 gem "state_machine"
 gem "formtastic"
+gem "friendly_id"
 gem "wirble", require: false
 
 group :assets do
