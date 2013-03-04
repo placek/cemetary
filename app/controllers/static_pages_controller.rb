@@ -1,4 +1,7 @@
 class StaticPagesController < ApplicationController
-  def about
-  end
+  layout "static_pages"
+  def news; end
+  def history; end
+  def partners; end
+  def contact; end
 end

@@ -84,6 +84,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    fancybox2-rails (0.2.4)
+      railties (>= 3.1.0)
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
@@ -213,6 +215,7 @@ DEPENDENCIES
   coffee-script-source (~> 1.4.0)
   compass-rails
   factory_girl_rails
+  fancybox2-rails (~> 0.2.4)
   formtastic
   friendly_id
   haml

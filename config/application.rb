@@ -12,6 +12,7 @@ end
 module Cemetery
   class Application < Rails::Application
     config.time_zone = "Europe/Warsaw"
+    config.i18n.load_path = Dir[Rails.root.join("config", "locales", "*.yml").to_s]
     config.i18n.default_locale = :pl
     config.encoding = "utf-8"
     config.filter_parameters += [:password]

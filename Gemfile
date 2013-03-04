@@ -22,6 +22,7 @@ group :assets do
   gem "coffee-script-source", "~> 1.4.0"
   gem "uglifier"
   gem "compass-rails"
+  gem "fancybox2-rails", "~> 0.2.4"
 end
 
 group :test do
