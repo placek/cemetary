@@ -12,6 +12,7 @@ gem "will_paginate"
 gem "state_machine"
 gem "formtastic"
 gem "friendly_id"
+gem "thin"
 gem "wirble", require: false
 
 group :assets do
@@ -24,7 +25,6 @@ group :assets do
 end
 
 group :test do
-  gem "debugger"
   gem "rspec-rails"
   gem "factory_girl_rails"
 end

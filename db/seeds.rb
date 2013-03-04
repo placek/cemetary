@@ -1,4 +1,4 @@
 #encoding: utf-8
-Part.create(name: "Część ewangelicko-augsburska", slug: "lutheran")
-Part.create(name: "Część prawosławna", slug: "orthodox")
-Part.create(name: "Część katolicka", slug: "catholic")
+Part.new(name: "Część ewangelicko-augsburska", slug: "lutheran").save(validate: false)
+Part.new(name: "Część prawosławna", slug: "orthodox").save(validate: false)
+Part.new(name: "Część katolicka", slug: "catholic").save(validate: false)

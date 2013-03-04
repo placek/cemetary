@@ -2,8 +2,8 @@ class CreateSepulchres < ActiveRecord::Migration
   def change
     create_table :sepulchres do |t|
       t.string :decedent, null: false
-      t.date :birth
-      t.date :burial, null: false
+      t.string :birth
+      t.string :burial
       t.text :history
 
       t.timestamps

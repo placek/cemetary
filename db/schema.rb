@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20130303213042) do
 
   create_table "sepulchres", :force => true do |t|
     t.string   "decedent",   :null => false
-    t.date     "birth"
-    t.date     "burial",     :null => false
+    t.string   "birth"
+    t.string   "burial"
     t.text     "history"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

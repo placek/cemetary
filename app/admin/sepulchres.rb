@@ -1,6 +1,4 @@
 ActiveAdmin.register Sepulchre do
-  menu label: "Kwatery"
-
   index do
     column :decedent
     column :birth
@@ -16,9 +14,10 @@ ActiveAdmin.register Sepulchre do
   form do |f|
     f.inputs do
       f.input :decedent
-      f.input :birth
-      f.input :burial
+      f.input :birth, as: :string
+      f.input :burial, as: :string
       f.input :history
+      f.input :part
     end
     f.buttons
   end

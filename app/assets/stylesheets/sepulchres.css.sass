@@ -1,0 +1,40 @@
+@import modules/macros
+
+section#content
+  border: none !important
+  background-color: transparent !important
+  padding: 0 !important
+
+  section
+    padding: $big-space
+    border: 1px solid $border-color
+    background-color: $background-color
+
+    &.map
+      float: left
+      width: $map-size
+      height: $map-size
+
+    &.sepulchres
+      float: right
+      width: $content-width - 5 * $big-space - $map-size
+
+      input
+        width: 390px
+        height: 2 * $small-space
+        margin-bottom: $small-space
+        border: 1px solid $border-color
+        outline: none
+        padding: $small-space / 2
+
+      dt
+        margin-top: $medium-space
+        span
+          float: right
+          .birth, .burial
+            display: inline-block
+            margin-left: $big-space
+          .birth:before
+            content: $birth-sign
+          .burial:before
+            content: $burial-sign

@@ -1,7 +1,4 @@
 ActiveAdmin.register AdminUser, as: "Admin" do
-
-  menu label: "Administratorzy"
-
   index do
     column :email
     column :current_sign_in_at
