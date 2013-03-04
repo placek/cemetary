@@ -1,4 +1,5 @@
 pl:
+  application_name: "Stary Cmentarz"
   links:
     news: "Aktualności"
     history: "Historia cmentarza"

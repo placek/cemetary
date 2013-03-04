@@ -2,7 +2,10 @@ class PostsController < InheritedResources::Base
   layout "static_pages"
   def index
     @posts = Post.all
-    respond_with(@posts)
+    respond_to do |format|
+      format.html { render :index }
+      format.atom { render layout: false }
+    end
   end
 
   def show
