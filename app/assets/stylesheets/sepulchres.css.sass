@@ -19,13 +19,21 @@ section#content
       float: right
       width: $content-width - 5 * $big-space - $map-size
 
-      input
-        width: 390px
-        height: 2 * $small-space
-        margin-bottom: $small-space
-        border: 1px solid $border-color
-        outline: none
-        padding: $small-space / 2
+      form
+        text-align: right
+        input
+          width: 390px
+          height: 2 * $small-space
+          margin-bottom: $small-space
+          border: 1px solid $border-color
+          outline: none
+          padding: $small-space / 2
+          &[type=submit]
+            height: 30px
+            width: 60px
+            color: $background-color
+            background-color: $link-color
+            border: none
 
       dt
         margin-top: $medium-space

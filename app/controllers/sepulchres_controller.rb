@@ -2,7 +2,7 @@ class SepulchresController < InheritedResources::Base
   before_filter :load_part
 
   def index
-    @sepulchres = @part.sepulchres
+    @sepulchres = @part.sepulchres.search(params[:search])
     respond_with(@sepulchres)
   end
 

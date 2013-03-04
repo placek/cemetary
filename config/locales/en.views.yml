@@ -1,4 +1,5 @@
 en:
+  application_name: "Stary Cmentarz"
   links:
     news: "News"
     history: "History of the cemetery"
@@ -7,3 +8,5 @@ en:
     lutheran_part: "Lutheran part"
     orthodox_part: "Orthodox part"
     catholic_part: "Catholic part"
+    back_html: "&laquo; back"
+    search: "search"
