@@ -1,0 +1,11 @@
+%section
+  %header
+    %h1= t("links.news")
+    = render partial: "posts/social_media"
+    %hr
+  %dl
+    - @posts.each do |post|
+      %dt
+        = link_to post.title, post
+        .small= l(post.created_at, format: :long)
+      %dd= truncate(post.body, length: 255)

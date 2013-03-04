@@ -1,0 +1,8 @@
+#social_media
+  %ul
+    - if @posts.present?
+      %li= image_tag(image_path("social_media/rss.png"))
+    - else
+      %li= image_tag(image_path("social_media/twitter.png"))
+      %li= image_tag(image_path("social_media/facebook.png"))
+      %li= image_tag(image_path("social_media/google.png"))

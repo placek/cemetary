@@ -1,0 +1,7 @@
+%section
+  %header
+    %h1= @post.title
+    %h4= link_to t("links.back_html"), posts_path
+    = render partial: "posts/social_media"
+    %hr
+  %section= @post.body
