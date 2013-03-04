@@ -3,6 +3,6 @@
     - if @posts.present?
       %li= link_to(image_tag(image_path("social_media/rss.png")), posts_path(format: :atom), target: "_blank")
     - else
-      %li= image_tag(image_path("social_media/twitter.png"))
-      %li= image_tag(image_path("social_media/facebook.png"))
-      %li= image_tag(image_path("social_media/google.png"))
+      %li= publish_on_twitter(@post)
+      %li= publish_on_facebook(@post)
+      %li= publish_on_google_plus(@post)
