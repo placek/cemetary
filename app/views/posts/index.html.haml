@@ -8,4 +8,4 @@
       %dt
         = link_to post.title, post
         .small= l(post.created_at, format: :long)
-      %dd= truncate(post.body, length: 255)
+      %dd= truncated_post_body(post)
