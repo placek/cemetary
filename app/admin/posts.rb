@@ -1,7 +1,9 @@
 ActiveAdmin.register Post do
   index do
     column :title
-    column :body
+    column :body do |post|
+      truncate(strip_tags(post.body), length: 200)
+    end
     default_actions
   end
 

@@ -16,4 +16,4 @@
         %span
           .birth= sepulchre.birth
           .burial= sepulchre.burial
-      %dd= truncate(sepulchre.history, length: 500)
+      %dd= truncated_sepulchre_history(sepulchre)

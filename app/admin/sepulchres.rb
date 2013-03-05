@@ -3,7 +3,9 @@ ActiveAdmin.register Sepulchre do
     column :decedent
     column :birth
     column :burial
-    column :history
+    column :history do |sepulchre|
+      truncate(strip_tags(sepulchre.history), length: 200)
+    end
     default_actions
   end
 
