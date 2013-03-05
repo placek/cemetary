@@ -1,5 +1,6 @@
 en:
   application_name: "Stary Cmentarz"
+  default_title: "Stary Cmentarz in Łódź"
   links:
     news: "News"
     history: "History of the cemetery"

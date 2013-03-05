@@ -10,8 +10,5 @@
     %section#content
       - if flash[:notice]
         .notice= flash[:notice]
-      %aside
-        = yield :map
       = yield
-      .clear
     %footer#footer= render partial: "layouts/footer"

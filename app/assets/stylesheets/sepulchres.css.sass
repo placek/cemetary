@@ -5,19 +5,22 @@ section#content
   background-color: transparent !important
   padding: 0 !important
 
+  aside
+    float: left
+    width: $map-size
+    height: $map-size
+    padding: $big-space
+    border: 1px solid $border-color
+    background-color: $background-color
+
   section
     padding: $big-space
     border: 1px solid $border-color
     background-color: $background-color
 
-    &.map
-      float: left
-      width: $map-size
-      height: $map-size
-
     &.sepulchres
       float: right
-      width: $content-width - 5 * $big-space - $map-size
+      width: $content-width - 4 * $big-space - $small-space - $map-size - 4
 
       form
         text-align: right

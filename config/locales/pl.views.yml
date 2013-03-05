@@ -1,5 +1,6 @@
 pl:
   application_name: "Stary Cmentarz"
+  default_title: "Stary Cmentarz w Łodzi"
   links:
     news: "Aktualności"
     history: "Historia cmentarza"
