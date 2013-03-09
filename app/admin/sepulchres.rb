@@ -18,6 +18,8 @@ ActiveAdmin.register Sepulchre do
       f.input :decedent
       f.input :birth, as: :string
       f.input :burial, as: :string
+      f.input :lat
+      f.input :lng
       f.input :history
       f.input :part
     end

@@ -4,7 +4,10 @@ class SepulchresController < InheritedResources::Base
   def index
     @sepulchres = @part.sepulchres.search(params[:search])
     @title = @part.name
-    respond_with(@sepulchres)
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @sepulchres }
+    end
   end
 
   def show
