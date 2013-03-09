@@ -37,3 +37,4 @@ group :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
 end
+ruby "2.0.0"
