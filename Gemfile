@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
 gem "rails"
-gem "sqlite3"
 gem "jquery-rails"
 gem "jbuilder"
 gem "capistrano"
@@ -14,6 +13,15 @@ gem "formtastic"
 gem "friendly_id"
 gem "thin"
 gem "wirble", require: false
+gem "heroku"
+
+group :production do
+  gem "pg"
+end
+
+group :development, :test do
+  gem "sqlite3"
+end
 
 group :assets do
   gem "therubyracer", require: "v8"
