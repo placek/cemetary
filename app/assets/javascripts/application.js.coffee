@@ -2,4 +2,4 @@
 //= require fancybox
 
 $ ->
-  $("footer#footer a").fancybox()
+  $("section.news dt a").fancybox()

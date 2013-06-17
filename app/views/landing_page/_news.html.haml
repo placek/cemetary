@@ -1,0 +1,10 @@
+= anchor(:news)
+%section.news
+  %header
+    %h2 Nowinki
+  %dl
+    - @posts.each do |post|
+      %dt
+        = link_to post.title, post, "data-fancybox-type" => "iframe"
+        %span.small= l(post.created_at, format: :long)
+      %dd= truncate(strip_tags(post.body), length: 300)

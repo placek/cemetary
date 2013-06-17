@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def application_title
-    [t("default_title"), @title].compact.join(" - ")
+  def anchor(name)
+    content_tag(:a, "", name: name, id: name)
   end
 
   def static_map_for_collection collection, options = { width: 500, height: 500, marker_color: "0x009933" }

@@ -1,11 +1,10 @@
 %p
-  - unless params[:controller] == "parts"
-    =link_to t("application_name"), root_path
-    |
-  = link_to t("links.news"), posts_path, "data-fancybox-type" => "iframe"
+  =link_to "Stary Cmentarz", root_path
   |
-  = link_to t("links.history"), static_page_path(action: :history), "data-fancybox-type" => "iframe"
+  = link_to "Nowinki", root_path(anchor: "news")
   |
-  = link_to t("links.partners"), static_page_path(action: :partners), "data-fancybox-type" => "iframe"
+  = link_to "Historia", root_path(anchor: "history")
   |
-  = link_to t("links.contact"), static_page_path(action: :contact), "data-fancybox-type" => "iframe"
+  = link_to "Partnerzy", root_path(anchor: "partners")
+  |
+  = link_to "Kontakt", root_path(anchor: "contact")

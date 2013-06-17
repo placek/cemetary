@@ -1,33 +1,90 @@
-@import modules/basic
+@import modules/macros
+@import url(http://fonts.googleapis.com/css?family=Lily+Script+One&subset=latin,latin-ext)
 
 body
   font-family: Helvetica, Jamrul, sans-serif
   font-size: $font-size
   background-color: $theme-color
-  line-height: 1.1em
   color: $text-color
 
-  section#content
-    margin: 4 * $small-space + 1 auto
-    width: $content-width
+  *
+    margin: 0
+    padding: 0
 
-  footer#footer
-    position: fixed
-    bottom: 0
-    width: 100%
-    height: $small-space
-    padding: $small-space
-    background-color: $background-color
-    border-top: 1px solid $border-color
-    text-align: center
+  p
+    line-height: 1.2em
+    padding: 0.4em
 
-  header#header
-    background-color: $background-color
-    padding: $small-space 0
-    border-bottom: 1px solid $border-color
-    text-align: center
-    margin-bottom: - 3 * $small-space - 2
-    width: 100%
-    h1
-      margin-bottom: -8px
-      font-size: 20px
+  a
+    color: $link-color
+    outline: none
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+  h1, h2, h3
+    margin: 0 0 $small-space 0
+    font-family: "Lily Script One", cursive
+
+  h1
+    font-size: 2.2em
+    line-height: 2.2em
+
+  h2
+    font-size: 1.7em
+    line-height: 1.7em
+
+  h3
+    font-size: 1.5em
+    line-height: 1.5em
+
+  > article
+    width: 1000px
+    margin: 0 auto
+
+    > section
+      margin: 2*$big-space 0
+      background-color: $background-color
+      border: 1px solid $border-color
+      padding: 2*$big-space
+
+    > footer
+      width: 978px
+      position: fixed
+      bottom: -$small-space/2
+      background-color: $background-color
+      border: 1px solid $border-color
+      padding: $small-space
+      text-align: center
+
+  svg
+
+    path
+      fill: $background-color
+      stroke: $text-color
+      stroke-width: 1px
+      cursor: pointer
+      z-index: 0
+
+      &.cross
+        fill: $text-color
+        stroke-width: 0
+
+      &.part
+        fill: $theme-color
+        stroke: $border-color
+
+    #lutheran_part:hover, #catholic_part:hover, #orthodox_part:hover
+      z-index: 999
+
+      .cross
+        fill: $link-color
+        stroke-width: 0
+
+      .part
+        fill: $highlight-color
+        stroke: $link-color
+
+      #rose path
+        stroke: $link-color

@@ -3,7 +3,6 @@ class PostsController < InheritedResources::Base
   def index
     @posts = Post.all
     respond_to do |format|
-      format.html { render :index }
       format.atom { render layout: false }
     end
   end

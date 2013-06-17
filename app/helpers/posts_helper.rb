@@ -1,8 +1,4 @@
 module PostsHelper
-  def truncated_post_body post, length = 300
-    truncate(strip_tags(post.body), length: length)
-  end
-
   def publish_on_facebook post
     url = "http://www.facebook.com/sharer.php?u=#{post_url(post)}"
     link_to(image_tag(image_path("social_media/facebook.png")), url, target: "_blank")
