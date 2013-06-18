@@ -9,10 +9,11 @@ section.sepulchres
       outline: none
     input[name=search]
       border: 1px solid $border-color
-      width: 835px
+      width: 820px
       color: $text-color
       @include left-radius(5px)
     input[name=commit]
+      padding: 7px 13px
       border: 1px solid $link-color
       color: $background-color
       background-color: $link-color
@@ -37,3 +38,20 @@ section.sepulchres
     margin-top: $big-space
     margin-right: $big-space
     float: left
+
+section.sepulchre
+  line-height: 1.3em
+
+  aside
+    float: left
+    border: 1px solid $border-color
+    padding: $medium-space
+    line-height: 1.2em
+    margin: 0 $medium-space $medium-space 0
+
+    dl
+      margin-top: $small-space
+      text-align: center
+
+      dt
+        font-weight: bold

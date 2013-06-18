@@ -1,5 +1,8 @@
 - content_for :header do
-  %h1 Stary Cmentarz
+  %h1
+    = navigable_header_link
+    \-
+    = @part.name
 
 %section.sepulchres
   %header
@@ -17,6 +20,6 @@
           = link_to sepulchre.decedent, sepulchre_path(@part, sepulchre)
           %span.birth= sepulchre.birth
           %span.burial= sepulchre.burial
-        %dd= truncated_sepulchre_history(sepulchre)
+        %dd= truncate(strip_tags(sepulchre.history), length: 300)
 
   .clear

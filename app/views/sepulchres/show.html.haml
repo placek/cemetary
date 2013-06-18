@@ -1,12 +1,19 @@
-%dl
-  %dt Decedent:
-  %dd= @sepulchre.decedent
+- content_for :header do
+  %h1
+    = navigable_header_link
+    \-
+    = @sepulchre.decedent
 
-  %dt Birth:
-  %dt= @sepulchre.birth
+%section.sepulchre
+  %aside
+    %figure= static_map_for_collection [@sepulchre], width: 150, height: 150
 
-  %dt Burial:
-  %dd= @sepulchre.burial
+    %dl
+      %dt Urodzony(a)
+      %dd= @sepulchre.birth
 
-  %dt History:
-  %dd= @sepulchre.history
+      %dt Zmarły(a)
+      %dd= @sepulchre.burial
+
+  %h3 Historia
+  = @sepulchre.history.html_safe
