@@ -1,5 +1,4 @@
 class PostsController < InheritedResources::Base
-  layout "static_pages"
   def index
     @posts = Post.all
     respond_to do |format|
@@ -9,6 +8,8 @@ class PostsController < InheritedResources::Base
 
   def show
     @post = Post.find(params[:id])
-    respond_with(@post)
+    respond_with(@post) do |format|
+      format.js
+    end
   end
 end

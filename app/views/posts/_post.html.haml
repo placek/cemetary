@@ -1,0 +1,7 @@
+%section.post
+  %header
+    %h3= @post.title
+    %span.small= l(@post.created_at, format: :long)
+    %span.back= link_to "więcej nowości &raquo;".html_safe, root_path, remote: true
+
+  %section= @post.body.html_safe

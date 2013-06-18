@@ -1,0 +1,8 @@
+%dl
+  - @posts.each do |post|
+    %dt
+      = link_to post.title, post, remote: true
+      %span.small= l(post.created_at, format: :long)
+    %dd= truncate(strip_tags(post.body), length: 300)
+
+= paginate @posts, remote: true

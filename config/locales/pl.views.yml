@@ -11,3 +11,7 @@ pl:
     catholic_part: "Część katolicka"
     back_html: "&laquo; wróć"
     search: "szukaj"
+  views:
+    pagination:
+      previous: "&laquo; wstecz"
+      next: "dalej &raquo;"
