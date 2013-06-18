@@ -7,6 +7,10 @@ body
   background-color: $theme-color
   color: $text-color
 
+  .clear
+    clear: both
+    float: none
+
   *
     margin: 0
     padding: 0
@@ -42,6 +46,18 @@ body
   > article
     width: 1000px
     margin: 0 auto
+
+    > header
+      width: 938px
+      position: relative
+      top: -$small-space
+      background-color: $background-color
+      border: 1px solid $border-color
+      padding: 0 2*$medium-space
+      margin-bottom: -2*$medium-space
+
+      h1
+        margin: 0
 
     > section
       margin: 2*$big-space 0

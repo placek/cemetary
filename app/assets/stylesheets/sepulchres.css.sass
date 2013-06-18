@@ -1,54 +1,39 @@
 @import modules/macros
 
-section#content
-  border: none !important
-  background-color: transparent !important
-  padding: 0 !important
+section.sepulchres
 
-  aside
-    float: left
-    width: $map-size
-    height: $map-size
-    padding: $big-space
-    border: 1px solid $border-color
-    background-color: $background-color
-    #map_canvas
-      width: $map-size
-      height: $map-size
+  > header
+    input
+      font-size: 1.1em
+      padding: 7px
+      outline: none
+    input[name=search]
+      border: 1px solid $border-color
+      width: 835px
+      color: $text-color
+      @include left-radius(5px)
+    input[name=commit]
+      border: 1px solid $link-color
+      color: $background-color
+      background-color: $link-color
+      margin-left: -$small-space/2
+      @include right-radius(5px)
 
-  section
-    padding: $big-space
-    border: 1px solid $border-color
-    background-color: $background-color
+  section.results
 
-    &.sepulchres
-      float: right
-      width: $content-width - 4 * $big-space - $small-space - $map-size - 4
-
-      form
-        text-align: right
-        input
-          width: 390px
-          height: 2 * $small-space
-          margin-bottom: $small-space
-          border: 1px solid $border-color
-          outline: none
-          padding: $small-space / 2
-          &[type=submit]
-            height: 30px
-            width: 60px
-            color: $background-color
-            background-color: $link-color
-            border: none
+    dl
+      margin-top: $big-space
+      line-height: 1.2em
 
       dt
-        margin-top: $medium-space
-        span
-          float: right
-          .birth, .burial
-            display: inline-block
-            margin-left: $big-space
-          .birth:before
-            content: "*"
-          .burial:before
-            content: "X"
+        font-size: 1.1em
+        line-height: 1.3em
+        .birth, .burial
+          font-size: 0.7em
+      dd
+        margin-bottom: $big-space
+
+  section.map
+    margin-top: $big-space
+    margin-right: $big-space
+    float: left
