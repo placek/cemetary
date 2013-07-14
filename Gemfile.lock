@@ -61,6 +61,10 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
     chunky_png (1.2.8)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -91,6 +95,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
@@ -146,6 +152,12 @@ GEM
       net-ssh (>= 2.6.5)
     netrc (0.7.7)
     orm_adapter (0.4.0)
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     pg (0.15.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -234,12 +246,14 @@ DEPENDENCIES
   coffee-script-source (~> 1.4.0)
   compass-rails
   factory_girl_rails
+  fancybox-rails
   formtastic
   friendly_id
   haml
   heroku
   jbuilder
   jquery-rails
+  paperclip
   pg
   rails
   rspec-rails

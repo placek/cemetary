@@ -6,6 +6,11 @@
 
 %section.sepulchre
   %aside
+    %section
+      - @sepulchre.photos.each do |photo|
+        %figure= link_to(image_tag(photo.photo.url(:thumb), height: "100"), photo.photo.url(:big))
+      .clear
+
     %dl
       %dt Część
       %dd= link_to @sepulchre.part.name, part_path(@sepulchre.part)

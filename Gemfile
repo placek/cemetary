@@ -13,6 +13,8 @@ gem "friendly_id"
 gem "thin"
 gem "wirble", require: false
 gem "heroku"
+gem "paperclip"
+gem "fancybox-rails"
 
 group :production do
   gem "pg"
