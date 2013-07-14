@@ -32,4 +32,5 @@
                 kwatera
                 = sepulchre.quarter.name
             %dd= truncate(strip_tags(sepulchre.description), length: 300)
+      = paginate @sepulchres
     .clear

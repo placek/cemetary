@@ -8,10 +8,10 @@
   %aside
     %dl
       %dt Część
-      %dd= link_to @sepulchre.part.name
+      %dd= link_to @sepulchre.part.name, part_path(@sepulchre.part)
 
       %dt Kwatera
-      %dd= link_to @sepulchre.quarter.name
+      %dd= link_to @sepulchre.quarter.name, part_quarter_path(@sepulchre.part, @sepulchre.quater)
 
       %dt Imię
       %dd= @sepulchre.name
