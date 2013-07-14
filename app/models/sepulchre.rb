@@ -1,17 +1,33 @@
 class Sepulchre < ActiveRecord::Base
-  attr_accessible :birth, :burial, :decedent, :history, :part_id, :lat, :lng
-  validates_presence_of :part
-  belongs_to :part, inverse_of: :sepulchres
+  attr_accessible :name, :surname, :family_name, :birth_date, :birth_location, :burial_date, :complex, :gravestone, :description, :quarter_id
 
-  scope :search, ->(query) { where("decedent LIKE ?", querify(query)) if query.present? }
+  belongs_to :quarter, inverse_of: :sepulchres
 
-  def to_json options = {}
-    super(options.merge(only: [ :decedent, :lat, :lng ]))
+  delegate :part, to: :quarter
+
+  validates :name, :surname, :quarter, presence: true
+
+  scope :search, ->(value) do
+    if value.present?
+      where(
+        "sepulchres.name LIKE ? OR sepulchres.surname LIKE ? OR sepulchres.family_name LIKE ? OR sepulchres.birth_date LIKE ? OR sepulchres.burial_date LIKE ? OR sepulchres.complex LIKE ?",
+        querify(value),
+        querify(value),
+        querify(value),
+        querify(value),
+        querify(value),
+        querify(value)
+      )
+    end
+  end
+
+  def decedent
+    [name, surname].join(" ")
   end
 
   private
 
-  def self.querify query
-    "%#{query.split("").join("%")}%"
+  def self.querify value
+    "%#{value.split("").join("%")}%"
   end
 end

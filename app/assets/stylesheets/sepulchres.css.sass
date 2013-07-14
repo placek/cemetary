@@ -1,44 +1,5 @@
 @import modules/macros
 
-section.sepulchres
-
-  > header
-    input
-      font-size: 1.1em
-      padding: 7px
-      outline: none
-    input[name=search]
-      border: 1px solid $border-color
-      width: 820px
-      color: $text-color
-      @include left-radius(5px)
-    input[name=commit]
-      padding: 7px 13px
-      border: 1px solid $link-color
-      color: $background-color
-      background-color: $link-color
-      margin-left: -$small-space/2
-      @include right-radius(5px)
-
-  section.results
-
-    dl
-      margin-top: $big-space
-      line-height: 1.2em
-
-      dt
-        font-size: 1.1em
-        line-height: 1.3em
-        .birth, .burial
-          font-size: 0.7em
-      dd
-        margin-bottom: $big-space
-
-  section.map
-    margin-top: $big-space
-    margin-right: $big-space
-    float: left
-
 section.sepulchre
   line-height: 1.3em
 
@@ -51,7 +12,10 @@ section.sepulchre
 
     dl
       margin-top: $small-space
-      text-align: center
+      max-width: 300px
 
       dt
         font-weight: bold
+
+      dd
+        margin-bottom: $small-space

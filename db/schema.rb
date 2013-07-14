@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306080307) do
+ActiveRecord::Schema.define(:version => 20130504114924) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -61,19 +61,33 @@ ActiveRecord::Schema.define(:version => 20130306080307) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "sepulchres", :force => true do |t|
-    t.string   "decedent",                         :null => false
-    t.string   "birth"
-    t.string   "burial"
-    t.text     "history"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+  create_table "quarters", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
     t.integer  "part_id"
-    t.float    "lat",        :default => 51.77761
-    t.float    "lng",        :default => 19.43505
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "sepulchres", ["burial"], :name => "index_sepulchres_on_burial"
-  add_index "sepulchres", ["decedent"], :name => "index_sepulchres_on_decedent"
+  create_table "sepulchres", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "family_name"
+    t.string   "birth_date"
+    t.string   "birth_location"
+    t.string   "burial_date"
+    t.string   "complex"
+    t.text     "gravestone"
+    t.text     "description"
+    t.integer  "quarter_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "sepulchres", ["burial_date"], :name => "index_sepulchres_on_burial_date"
+  add_index "sepulchres", ["complex"], :name => "index_sepulchres_on_complex"
+  add_index "sepulchres", ["name"], :name => "index_sepulchres_on_name"
+  add_index "sepulchres", ["quarter_id"], :name => "index_sepulchres_on_quarter_id"
+  add_index "sepulchres", ["surname"], :name => "index_sepulchres_on_surname"
 
 end

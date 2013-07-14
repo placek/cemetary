@@ -3,15 +3,11 @@
 %html
   %head
     = render partial: "layouts/metatags"
-
 %body
   %article
     %header
       = yield :header
-    - if flash[:notice]
-      .notice= flash[:notice]
-    %aside
-      = yield :map
-    = yield
+    %section
+      = yield
     %footer
       = render partial: "layouts/footer"

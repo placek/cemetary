@@ -6,14 +6,43 @@
 
 %section.sepulchre
   %aside
-    %figure= static_map_for_collection [@sepulchre], width: 150, height: 150
-
     %dl
-      %dt Urodzony(a)
-      %dd= @sepulchre.birth
+      %dt Część
+      %dd= link_to @sepulchre.part.name
 
-      %dt Zmarły(a)
-      %dd= @sepulchre.burial
+      %dt Kwatera
+      %dd= link_to @sepulchre.quarter.name
 
-  %h3 Historia
-  = @sepulchre.history.html_safe
+      %dt Imię
+      %dd= @sepulchre.name
+
+      %dt Nazwisko
+      %dd= @sepulchre.surname
+
+      - if @sepulchre.family_name.present?
+        %dt Z domu
+        %dd= @sepulchre.family_name
+
+      - if @sepulchre.birth_date.present?
+        %dt Data urodzenia
+        %dd= @sepulchre.birth_date
+
+      - if @sepulchre.burial_date.present?
+        %dt Data śmierci
+        %dd= @sepulchre.burial_date
+
+      - if @sepulchre.birth_location.present?
+        %dt Miejsce urodzenia
+        %dd= @sepulchre.birth_location
+
+      - if @sepulchre.complex.present?
+        %dt Grób
+        %dd= @sepulchre.complex
+
+      - if @sepulchre.gravestone.present?
+        %dt Nagrobek
+        %dd= @sepulchre.gravestone
+
+  %h3 Opis
+  = @sepulchre.description
+  .clear

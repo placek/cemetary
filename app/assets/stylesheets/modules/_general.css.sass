@@ -1,5 +1,5 @@
 @import modules/macros
-@import url(http://fonts.googleapis.com/css?family=Lily+Script+One&subset=latin,latin-ext)
+@import url(http://fonts.googleapis.com/css?family=Milonga&subset=latin,latin-ext)
 
 body
   font-family: Helvetica, Jamrul, sans-serif
@@ -33,15 +33,10 @@ body
     color: $link-color
     outline: none
     text-decoration: none
-    &#to_homepage
-      color: $text-color
-
-    &:hover
-      text-decoration: underline
 
   h1, h2, h3
     margin: 0 0 $small-space 0
-    font-family: "Lily Script One", cursive
+    font-family: "Milonga", cursive
 
   h1
     font-size: 2.2em
@@ -72,12 +67,16 @@ body
         margin: 0
 
     > section
-      margin: 2*$big-space 0
-      background-color: $background-color
-      border: 1px solid $border-color
-      padding: 2*$big-space
+      margin: 2*$big-space 0 50px + $big-space 0
+
+      > section
+        margin: $big-space 0 0 0
+        background-color: $background-color
+        border: 1px solid $border-color
+        padding: 2*$big-space
 
     > footer
+      height: 30px
       width: 978px
       position: fixed
       bottom: -$small-space/2
@@ -87,32 +86,46 @@ body
       text-align: center
 
   svg
-
     path
-      fill: $background-color
-      stroke: $text-color
+      fill: $theme-color
+      stroke: $border-color
       stroke-width: 1px
-      cursor: pointer
-      z-index: 0
+
+      &#border
+        fill: $background-color
+        stroke: $text-color
+
+      &.cross, &.part, &.quarter
+        cursor: pointer
 
       &.cross
         fill: $text-color
-        stroke-width: 0
+        stroke: $text-color
+
+      &.rose, &.white_cross
+        fill: $background-color
+        stroke: $text-color
 
       &.part
         fill: $theme-color
         stroke: $border-color
 
-    #lutheran_part:hover, #catholic_part:hover, #orthodox_part:hover
-      z-index: 999
-
+    #lutheran_part:hover, #orthodox_part:hover, #catholic_part:hover
       .cross
         fill: $link-color
-        stroke-width: 0
+        stroke: $link-color
+
+      .rose, .white_cross
+        fill: $background-color
+        stroke: $link-color
 
       .part
         fill: $highlight-color
         stroke: $link-color
 
-      #rose path
-        stroke: $link-color
+    .quarter:hover
+      fill: $highlight-color
+      stroke: $link-color
+
+#quarter_links
+  display: none

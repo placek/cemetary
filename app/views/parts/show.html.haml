@@ -1,0 +1,39 @@
+- content_for :header do
+  %h1
+    = navigable_header_link
+    \-
+    = @part.name
+
+%ul#quarter_links
+  - @part.quarters.each do |quarter|
+    %li= link_to quarter.name, part_quarter_path(@part, quarter), id: "quarter_link_#{quarter.name}"
+
+%section.part
+  %figure.map
+    = render file: @part.map
+
+  %section.sepulchres
+    %header
+      = form_tag part_path(@part), method: :get do
+        = text_field_tag :search, params[:search]
+        = submit_tag t("links.search")
+
+    %section.results
+      - if @sepulchres.empty?
+        %span Brak wyników wyszukiwania dla podanej frazy
+      - else
+        %dl
+          - @sepulchres.each_with_index do |sepulchre, index|
+            %dt
+              = link_to sepulchre.decedent, part_quarter_sepulchre_path(@part, sepulchre.quarter, sepulchre)
+              %span.additional
+                - if sepulchre.birth_date.present?
+                  ur.
+                  = sepulchre.birth_date
+                - if sepulchre.burial_date.present?
+                  zm.
+                  = sepulchre.burial_date
+                kwatera
+                = sepulchre.quarter.name
+            %dd= truncate(strip_tags(sepulchre.description), length: 300)
+    .clear

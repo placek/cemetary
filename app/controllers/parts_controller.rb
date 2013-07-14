@@ -1,7 +1,7 @@
 class PartsController < InheritedResources::Base
-  layout "parts"
-  def index
-    @parts = Part.all
-    respond_with(@parts)
+  def show
+    @part = Part.find(params[:id])
+    @sepulchres = @part.sepulchres.search(params[:search])
+    respond_with(@part)
   end
 end

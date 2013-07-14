@@ -1,7 +1,7 @@
 %section.intro
   %section.map
     %figure
-      = render partial: "shared/navigation"
+      = render file: Rails.root.join("public").join("system").join("map.svg")
 
   %section.explanation
     %header
@@ -11,6 +11,5 @@
     %p Curabitur dictum lectus eget enim gravida laoreet. Maecenas id tristique nibh, vitae volutpat justo. Sed pulvinar sit amet ante ac tincidunt. Integer vel sapien pellentesque, posuere dui a, aliquet augue.
     %footer
       %ul
-        %li= link_to "cmentarz ewangelicko-augsburski", part_path(:lutheran), id: "lutheran_part_link"
-        %li= link_to "cmentarz katolicki", part_path(:catholic), id: "catholic_part_link"
-        %li= link_to "cmeantarz prawosławny", part_path(:orthodox), id: "orthodox_part_link"
+        - @parts.each do |part|
+          %li= link_to part.name, part, id: "#{part.slug}_part_link"

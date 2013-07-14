@@ -6,6 +6,5 @@ class CreateParts < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_column :sepulchres, :part_id, :integer
   end
 end
