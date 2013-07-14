@@ -17,6 +17,14 @@ ActiveAdmin.register_page "Dashboard" do
           h5 "Ilość nagrobków: #{Part.find("orthodox").sepulchres.count}"
         end
       end
+      column do
+        panel "Posty" do
+          h5 "Ilość postów: #{Post.count}"
+        end
+        panel "Admini" do
+          h5 "Ilość adminów: #{AdminUser.count}"
+        end
+      end
     end
   end
 end
