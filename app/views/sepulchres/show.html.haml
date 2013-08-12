@@ -16,7 +16,10 @@
       %dd= link_to @sepulchre.part.name, part_path(@sepulchre.part)
 
       %dt Kwatera
-      %dd= link_to @sepulchre.quarter.name, part_quarter_path(@sepulchre.part, @sepulchre.quarter)
+      %dd
+        = link_to @sepulchre.quarter.name, part_quarter_path(@sepulchre.part, @sepulchre.quarter)
+        pole
+        = @sepulchre.number
 
       %dt Imię
       %dd= @sepulchre.name

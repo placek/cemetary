@@ -2,6 +2,7 @@ ActiveAdmin.register Sepulchre do
   index do
     column :part
     column :quarter
+    column :number
     column :name
     column :surname
     column :family_name
@@ -37,6 +38,7 @@ ActiveAdmin.register Sepulchre do
       f.input :gravestone
       f.input :description
       f.input :quarter
+      f.input :number
     end
     f.buttons
   end

@@ -21,7 +21,7 @@
         %dl
           - @sepulchres.each_with_index do |sepulchre, index|
             %dt
-              = link_to sepulchre.decedent, part_quarter_sepulchre_path(@part, @quarter, sepulchre)
+              = link_to sepulchre.decedent, part_quarter_sepulchre_path(@part, @quarter, sepulchre), "data-number" => sepulchre.number
               %span.additional
                 - if sepulchre.birth_date.present?
                   ur.
