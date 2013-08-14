@@ -18,6 +18,7 @@ gem "fancybox-rails"
 
 group :production do
   gem "pg"
+  gem "shelly-dependencies"
 end
 
 group :development, :test do
