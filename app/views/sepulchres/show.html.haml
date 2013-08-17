@@ -60,5 +60,8 @@
         %dd= @sepulchre.gravestone
 
   %h3 Opis
-  = @sepulchre.description
+  - unless @sepulchre.description.present?
+    %p brak opisu
+  - else
+    = @sepulchre.description
   .clear
