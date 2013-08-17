@@ -43,6 +43,10 @@
         %dt Miejsce urodzenia
         %dd= @sepulchre.birth_location
 
+      - if @sepulchre.burial_location.present?
+        %dt Miejsce śmierci
+        %dd= @sepulchre.burial_location
+
       - if @sepulchre.profession.present?
         %dt Zawód
         %dd= @sepulchre.profession

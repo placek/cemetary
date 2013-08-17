@@ -9,6 +9,7 @@ ActiveAdmin.register Sepulchre do
     column :birth_date
     column :burial_date
     column :birth_location
+    column :burial_location
     column :profession
     column :complex
     column :gravestone do |sepulchre|
@@ -35,6 +36,7 @@ ActiveAdmin.register Sepulchre do
       f.input :birth_date
       f.input :burial_date
       f.input :birth_location
+      f.input :burial_location
       f.input :profession
       f.input :complex
       f.input :gravestone
