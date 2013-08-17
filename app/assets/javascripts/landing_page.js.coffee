@@ -9,4 +9,5 @@ $ ->
     $("#" + $(this).attr("id") + "_link").hide()
 
   $("#lutheran_part, #orthodox_part, #catholic_part").click ->
-    window.location.href = $("#" + $(this).attr("id") + "_link").attr("href")
+    if typeof($("#" + $(this).attr("id") + "_link a").attr("href")) != "undefined"
+      window.location.href = $("#" + $(this).attr("id") + "_link a").attr("href")

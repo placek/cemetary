@@ -1,7 +1,7 @@
 class Part < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
-  attr_accessible :name, :slug
+  attr_accessible :name, :slug, :avaliable
 
   has_many :sepulchres, through: :quarters
   has_many :quarters, inverse_of: :part, dependent: :destroy
