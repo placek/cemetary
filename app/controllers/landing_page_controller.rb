@@ -7,4 +7,7 @@ class LandingPageController < ApplicationController
       format.js
     end
   end
+
+  def about_tonsc
+  end
 end

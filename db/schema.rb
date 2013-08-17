@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130817135735) do
+ActiveRecord::Schema.define(:version => 20130817141017) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -91,10 +91,11 @@ ActiveRecord::Schema.define(:version => 20130817135735) do
     t.text     "gravestone"
     t.text     "description"
     t.integer  "quarter_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "number"
     t.string   "profession"
+    t.string   "burial_location"
   end
 
   add_index "sepulchres", ["burial_date"], :name => "index_sepulchres_on_burial_date"
