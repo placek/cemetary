@@ -1,12 +1,14 @@
 //= require active_admin/base
+//= require tinymce
 
-tinyMCE.init({
-  mode : "textareas",
-  theme : "advanced",
-  theme_advanced_buttons1 : "bold, italic, underline, strikethrough, |, bullist, numlist, blockquote, |, undo, redo, |, link, unlink, code",
-  theme_advanced_buttons2 : "",
-  theme_advanced_buttons3 : "",
-  theme_advanced_toolbar_location : "top",
-  theme_advanced_toolbar_align : "center",
-  theme_advanced_resizing : false
+
+$(function() {
+  tinyMCE.init({
+    mode : "textareas",
+    inline : true,
+    menubar : false,
+    toolbar_items_size : "small",
+    toolbar : "undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image",
+    plugins : "link image",
+  });
 });

@@ -13,7 +13,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :body
+      f.input :body, input_html: { class: "tinymce" }
     end
     f.buttons
   end

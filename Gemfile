@@ -15,6 +15,7 @@ gem "wirble", require: false
 gem "heroku"
 gem "paperclip"
 gem "fancybox-rails"
+gem "tinymce-rails"
 
 group :production do
   gem "pg"
