@@ -1,6 +1,0 @@
-# config/deploy/shelly/after_successful_deploy
-set -e
-
-# link public/system to disk
-mkdir -p disk/system
-ln -s ../disk/system public/system
