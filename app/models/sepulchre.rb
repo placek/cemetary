@@ -1,4 +1,7 @@
 class Sepulchre < ActiveRecord::Base
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
   attr_accessible :name, :surname, :family_name, :birth_date, :birth_location, :burial_date, :complex, :gravestone, :description, :quarter_id, :number
 
   belongs_to :quarter, inverse_of: :sepulchres
@@ -10,27 +13,13 @@ class Sepulchre < ActiveRecord::Base
 
   paginates_per 15
 
-  scope :search, ->(value) do
-    if value.present?
-      where(
-        "sepulchres.name LIKE ? OR sepulchres.surname LIKE ? OR sepulchres.family_name LIKE ? OR sepulchres.birth_date LIKE ? OR sepulchres.burial_date LIKE ? OR sepulchres.complex LIKE ?",
-        querify(value),
-        querify(value),
-        querify(value),
-        querify(value),
-        querify(value),
-        querify(value)
-      )
+  def self.search query
+    tire.search load: true  do
+      query { string query, default_operator: "AND" } if query.present?
     end
   end
 
   def decedent
     [name, surname].join(" ")
-  end
-
-  private
-
-  def self.querify value
-    "%#{value.split("").join("%")}%"
   end
 end

@@ -16,6 +16,7 @@ gem "heroku"
 gem "paperclip"
 gem "fancybox-rails"
 gem "tinymce-rails"
+gem "tire"
 
 group :production do
   gem "pg"
