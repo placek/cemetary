@@ -8,7 +8,7 @@ class Sepulchre < ActiveRecord::Base
 
   validates :name, :surname, :quarter, :number, presence: true
 
-  paginates_per 5
+  paginates_per 15
 
   scope :search, ->(value) do
     if value.present?
