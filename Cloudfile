@@ -8,5 +8,6 @@ cemetery:
     app1:
       size: small
       thin: 1
+      elasticsearch: on
       databases:
         - postgresql
