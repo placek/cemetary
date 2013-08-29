@@ -4,22 +4,31 @@ section.sepulchre
   line-height: 1.3em
 
   aside
-    float: right
+    display: inline-block
     border: 1px solid $border-color
     padding: $medium-space
     line-height: 1.2em
-    margin: 0 0 $medium-space $medium-space
-    max-width: 310px
+    width: 880px
+    margin-bottom: $big-space
 
-    figure
-      float: left
+    &.media
+      text-align: center
+
+      figure
+        margin-right: $big-space
+        display: inline-block
+
+    .detail
+      display: table-cell
+      vertical-align: middle
+      text-align: center
+      min-height: 65px
+      min-width: 120px
+      width: 200px
       margin-right: $small-space
+      font-size: 0.9em
 
-    dl
-      margin-top: $small-space
-
-      dt
-        font-weight: bold
-
-      dd
-        margin-bottom: $small-space
+      h5
+        font-size: 1.1em
+        font-family: "Milonga", cursive
+        margin-bottom: $small-space/2

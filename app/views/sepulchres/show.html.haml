@@ -5,63 +5,76 @@
     = @sepulchre.decedent
 
 %section.sepulchre
+
+  %aside.media
+    %figure.map{ "data-number" => @sepulchre.number }
+      = link_to part_quarter_path(@sepulchre.part, @sepulchre.quarter) do
+        = render file: @sepulchre.quarter.map
+    - @sepulchre.photos.each do |photo|
+      %figure= link_to(image_tag(photo.photo.url(:thumb), height: "100"), photo.photo.url(:big))
+
   %aside
-    %section
-      - @sepulchre.photos.each do |photo|
-        %figure= link_to(image_tag(photo.photo.url(:thumb), height: "100"), photo.photo.url(:big))
-      .clear
+    .detail
+      %h5 Część
+      = link_to @sepulchre.part.name, part_path(@sepulchre.part)
 
-    %dl
-      %dt Część
-      %dd= link_to @sepulchre.part.name, part_path(@sepulchre.part)
+    .detail
+      %h5 Kwatera
+      = link_to @sepulchre.quarter.name, part_quarter_path(@sepulchre.part, @sepulchre.quarter)
+      pole
+      = @sepulchre.number
 
-      %dt Kwatera
-      %dd
-        = link_to @sepulchre.quarter.name, part_quarter_path(@sepulchre.part, @sepulchre.quarter)
-        pole
-        = @sepulchre.number
+    .detail
+      %h5 Imię
+      = @sepulchre.name
 
-      %dt Imię
-      %dd= @sepulchre.name
+    .detail
+      %h5 Nazwisko
+      = @sepulchre.surname
 
-      %dt Nazwisko
-      %dd= @sepulchre.surname
+    - if @sepulchre.birth_date.present?
+      .detail
+        %h5 Data urodzenia
+        = @sepulchre.birth_date
 
+    - if @sepulchre.burial_date.present?
+      .detail
+        %h5 Data śmierci
+        = @sepulchre.burial_date
+
+  - if [@sepulchre.family_name, @sepulchre.birth_location, @sepulchre.burial_location, @sepulchre.complex, @sepulchre.gravestone, @sepulchre.profession].compact.present?
+    %aside
       - if @sepulchre.family_name.present?
-        %dt Z domu
-        %dd= @sepulchre.family_name
-
-      - if @sepulchre.birth_date.present?
-        %dt Data urodzenia
-        %dd= @sepulchre.birth_date
-
-      - if @sepulchre.burial_date.present?
-        %dt Data śmierci
-        %dd= @sepulchre.burial_date
+        .detail
+          %h5 Z domu
+          = @sepulchre.family_name
 
       - if @sepulchre.birth_location.present?
-        %dt Miejsce urodzenia
-        %dd= @sepulchre.birth_location
+        .detail
+          %h5 Miejsce urodzenia
+          = @sepulchre.birth_location
 
       - if @sepulchre.burial_location.present?
-        %dt Miejsce śmierci
-        %dd= @sepulchre.burial_location
+        .detail
+          %h5 Miejsce śmierci
+          = @sepulchre.burial_location
 
       - if @sepulchre.profession.present?
-        %dt Zawód
-        %dd= @sepulchre.profession
+        .detail
+          %h5 Zawód
+          = @sepulchre.profession
 
       - if @sepulchre.complex.present?
-        %dt Grób
-        %dd= @sepulchre.complex
+        .detail
+          %h5 Grób
+          = @sepulchre.complex
 
       - if @sepulchre.gravestone.present?
-        %dt Nagrobek
-        %dd= @sepulchre.gravestone
+        .detail
+          %h5 Nagrobek
+          = @sepulchre.gravestone.html_safe
 
-  %h3 Opis
   - unless @sepulchre.description.present?
     %p brak opisu
   - else
-    = @sepulchre.description
-  .clear
+    = @sepulchre.description.html_safe
