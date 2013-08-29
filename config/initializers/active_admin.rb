@@ -7,4 +7,5 @@ ActiveAdmin.setup do |config|
   config.batch_actions = true
   config.register_javascript "tinymce.js"
   config.register_javascript "active_admin.js"
+  config.allow_comments = false
 end
