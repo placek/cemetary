@@ -10,10 +10,9 @@ body
   .pagination
     padding-top: $big-space
     text-align: right
-
     > span
-      display: none
-
+      &.first, &.last
+        display: none
       &.prev, &.next
         display: inline-block
 

@@ -5,3 +5,4 @@ pl:
     pagination:
       previous: "&laquo; wstecz"
       next: "dalej &raquo;"
+      truncate: "..."
