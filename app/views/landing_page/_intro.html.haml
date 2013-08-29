@@ -8,6 +8,10 @@
       %h1= navigable_header_link
     %p Witamy na stronie Starego Cmentarza w Łodzi.
     %p Poniżej znajdziecie Państwo opisy poszczególnych części cmentarza oraz, w części ewangelickiej, wyszukiwarkę osób pochowanych na cmentarzu wraz z mapą kwater.
+    %p
+      Projekt jest w fazie rozwoju. Zebrane dane dostępne na tej stronie ograniczają się jedynie do części ewangelickiej Starego Cmentarza. W przyszłości planowane jest także uzupełnienie danych dotyczących części katolickiej oraz prawosławnej. Więcej informacji na temat rozwoju projektu dostępne jest w dziale
+      = link_to "Jak możesz pomóc", root_path(anchor: "your_help")
+      \.
     %footer
       %ul
         - @parts.each do |part|
