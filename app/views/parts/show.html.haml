@@ -20,12 +20,12 @@
 
     %section.results
       - if @sepulchres.empty?
-        %span Brak wyników wyszukiwania dla podanej frazy
+        %span Brak wyników wyszukiwania
       - else
         %dl
           - @sepulchres.each_with_index do |sepulchre, index|
-            %dt
-              = link_to sepulchre.decedent, part_quarter_sepulchre_path(@part, sepulchre.quarter, sepulchre), "data-quarters" => sepulchre.quarter.name
+            %dt{ "data-quarters" => sepulchre.quarter.name }
+              = link_to sepulchre.decedent, part_quarter_sepulchre_path(@part, sepulchre.quarter, sepulchre)
               %span.additional
                 - if sepulchre.birth_date.present?
                   ur.
@@ -33,8 +33,7 @@
                 - if sepulchre.burial_date.present?
                   zm.
                   = sepulchre.burial_date
-                kwatera
-                = sepulchre.quarter.name
-            %dd= truncate(strip_tags(sepulchre.description), length: 300)
+                = link_to "kwatera #{sepulchre.quarter.name}", part_quarter_path(@part, sepulchre.quarter)
+            %dd= truncate(strip_tags(sepulchre.description), length: 100)
       = paginate @sepulchres
     .clear
