@@ -6,7 +6,7 @@ class Sepulchre < ActiveRecord::Base
   validates :name, :surname, :quarter, :number, presence: true
   paginates_per 10
   default_scope { alphabethic }
-  QUERY_STRING = "(sepulchres.name LIKE ? OR sepulchres.surname LIKE ? OR sepulchres.family_name LIKE ? OR sepulchres.birth_date LIKE ? OR sepulchres.burial_date LIKE ? OR sepulchres.complex LIKE ? OR sepulchres.profession LIKE ?)"
+  QUERY_STRING = "(lower(sepulchres.name) LIKE ? OR lower(sepulchres.surname) LIKE ? OR lower(sepulchres.family_name) LIKE ? OR lower(sepulchres.birth_date) LIKE ? OR lower(sepulchres.burial_date) LIKE ? OR lower(sepulchres.complex) LIKE ? OR lower(sepulchres.profession) LIKE ?)"
 
   scope :alphabethic, order("surname, name, burial_date")
   scope :search, ->(value) do
@@ -24,6 +24,6 @@ class Sepulchre < ActiveRecord::Base
   protected
 
   def self.get_keywords value
-    value.split(/\s+/).map { |keyword| "%#{keyword.gsub("*", "%")}%" }
+    value.split(/\s+/).map { |keyword| "%#{keyword.gsub("*", "%").downcase}%" }
   end
 end
