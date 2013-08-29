@@ -74,7 +74,5 @@
           %h5 Nagrobek
           = @sepulchre.gravestone.html_safe
 
-  - unless @sepulchre.description.present?
-    %p brak opisu
-  - else
+  - if @sepulchre.description.present?
     = @sepulchre.description.html_safe
