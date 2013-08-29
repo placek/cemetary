@@ -1,27 +1,19 @@
 class Sepulchre < ActiveRecord::Base
   attr_accessible :name, :surname, :family_name, :birth_date, :birth_location, :burial_date, :complex, :gravestone, :profession, :description, :quarter_id, :number
-
   belongs_to :quarter, inverse_of: :sepulchres
   has_many :photos, inverse_of: :sepulchre, dependent: :destroy
-
   delegate :part, to: :quarter
-
   validates :name, :surname, :quarter, :number, presence: true
+  paginates_per 10
+  default_scope { alphabethic }
+  QUERY_STRING = "(sepulchres.name LIKE ? OR sepulchres.surname LIKE ? OR sepulchres.family_name LIKE ? OR sepulchres.birth_date LIKE ? OR sepulchres.burial_date LIKE ? OR sepulchres.complex LIKE ? OR sepulchres.profession LIKE ?)"
 
-  paginates_per 15
-
+  scope :alphabethic, order("surname, name, burial_date")
   scope :search, ->(value) do
     if value.present?
-      where(
-        "sepulchres.name LIKE ? OR sepulchres.surname LIKE ? OR sepulchres.family_name LIKE ? OR sepulchres.birth_date LIKE ? OR sepulchres.burial_date LIKE ? OR sepulchres.complex LIKE ? OR sepulchres.profession LIKE ?",
-        querify(value),
-        querify(value),
-        querify(value),
-        querify(value),
-        querify(value),
-        querify(value),
-        querify(value)
-      )
+      keywords = get_keywords(value)
+      query = ([QUERY_STRING] * keywords.count).join(" AND ")
+      where(query, *(keywords.map { |keyword| [keyword] * 7 }.flatten))
     end
   end
 
@@ -29,9 +21,9 @@ class Sepulchre < ActiveRecord::Base
     [name, surname].join(" ")
   end
 
-  private
+  protected
 
-  def self.querify value
-    "%#{value.split("").join("%")}%"
+  def self.get_keywords value
+    value.split(/\s+/).map { |keyword| "%#{keyword.gsub("*", "%")}%" }
   end
 end
