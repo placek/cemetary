@@ -1,5 +1,29 @@
 @import modules/macros
 
+.ui-autocomplete
+  line-height: 1em
+  background-color: $background-color
+  border-bottom: 1px solid $border-color
+  border-left: 1px solid $border-color
+  border-right: 1px solid $border-color
+  width: 287px
+  .ui-menu-item
+    padding: $small-space
+    cursor: pointer
+    list-style: none
+    &:hover
+      background-color: $highlight-color
+
+.ui-tooltip
+  border: 1px solid $border-color
+  background: $background-color
+  line-height: 1em
+  font-size: 0.8em
+  padding: $small-space
+  text-align: center
+  width: 300px
+  height: 16px
+
 section.part
 
   figure.map
@@ -24,6 +48,8 @@ section.part
         color: $background-color
         background-color: $link-color
         margin-left: -$small-space/2
+      span[role=status]
+        display: none
 
     section.results
       margin-top: $big-space

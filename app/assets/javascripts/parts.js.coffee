@@ -10,3 +10,15 @@ $ ->
     $("#quarters_" + $(this).attr("data-quarters")).css({ fill: "#eeeeee", stroke: "#cccccc" })
 
   $(document).tooltip({ position: { my: "right middle", at: "left+500 middle" }})
+
+  $("#search").autocomplete({
+      minLength: 3,
+      source: (request, response) ->
+        $.ajax(
+          url: window.location.href.split("?")[0],
+          dataType: "json",
+          data: { search: request.term + "*" },
+        ).done((data) ->
+          response(data)
+        )
+    })
