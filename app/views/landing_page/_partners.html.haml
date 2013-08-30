@@ -4,6 +4,7 @@
     %h2 Partnerzy
 
   .logos
+    %figure= link_to(image_tag(image_path("partners/00_uml.png")), "http://www.uml.lodz.pl/")
     %figure= link_to(image_tag(image_path("partners/01_mwd.png")), "http://www.mlodziez.org.pl/")
     %figure= link_to(image_tag(image_path("partners/02_tonsc.png")), about_tonsc_path)
     %figure= link_to(image_tag(image_path("partners/03_scheibler.png")), "http://www.scheibler.org.pl")
@@ -15,6 +16,8 @@
     %figure= link_to(image_tag(image_path("partners/09_shelly.png")), "https://shellycloud.com/")
 
   %ol
+    %li
+      = link_to "Projekt pod patronatem honorowym prezydenta miasta Łodzi", "http://www.uml.lodz.pl/"
     %li
       Projekt
       %strong
