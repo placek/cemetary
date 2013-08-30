@@ -6,7 +6,10 @@
 
 %section.quarter
   %figure.map
-    = render file: @quarter.map
+    - if map = @quarter.map
+      = render file: map
+    - else
+      Brak mapy kwatery
 
   %section.sepulchres
     %header
