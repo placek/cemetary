@@ -7,9 +7,10 @@
 %section.sepulchre
 
   %aside.media
-    %figure.map{ "data-number" => @sepulchre.number }
-      = link_to part_quarter_path(@sepulchre.part, @sepulchre.quarter) do
-        = render file: @sepulchre.quarter.map
+    - if @sepulchre.quarter.map
+      %figure.map{ "data-number" => @sepulchre.number }
+        = link_to part_quarter_path(@sepulchre.part, @sepulchre.quarter) do
+          = render file: @sepulchre.quarter.map
     - @sepulchre.photos.each do |photo|
       %figure= link_to(image_tag(photo.photo.url(:thumb), height: "100"), photo.photo.url(:big))
 

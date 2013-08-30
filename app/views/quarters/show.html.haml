@@ -5,11 +5,12 @@
     = @quarter.name
 
 %section.quarter
-  %figure.map
-    - if map = @quarter.map
+  - if map = @quarter.map
+    %figure.map
       = render file: map
-    - else
-      Brak mapy kwatery
+  - else
+    %figure.map{ style: "border: 1px solid #ccc; line-height: 500px" }
+      Brak mapy
 
   %section.sepulchres
     %header
