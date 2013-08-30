@@ -102,37 +102,20 @@ body
         fill: $background-color
         stroke: $background-color
 
-      &.cross, &.part, &.quarter
-        cursor: pointer
-
       &.cross
+        cursor: pointer
         fill: $text-color
         stroke: $text-color
 
-      &.rose, &.white_cross
+      &.white_cross
         fill: $background-color
         stroke: $text-color
 
-      &.part
-        fill: $theme-color
-        stroke: $border-color
-
-    #lutheran_part:hover, #orthodox_part:hover, #catholic_part:hover
-      .cross
-        fill: $link-color
-        stroke: $link-color
-
-      .rose, .white_cross
-        fill: $background-color
-        stroke: $link-color
-
-      .part
-        fill: $highlight-color
-        stroke: $link-color
-
-    .quarter:hover
-      fill: $highlight-color
-      stroke: $link-color
+      &.part, &.quarter
+        cursor: pointer
+        &:hover
+          fill: $highlight-color
+          stroke: $link-color
 
 #quarter_links
   display: none
