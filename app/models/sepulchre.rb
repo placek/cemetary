@@ -3,7 +3,7 @@ class Sepulchre < ActiveRecord::Base
   belongs_to :quarter, inverse_of: :sepulchres
   has_many :photos, inverse_of: :sepulchre, dependent: :destroy
   delegate :part, to: :quarter
-  validates :name, :surname, :quarter, :number, presence: true
+  validates :name, :surname, :quarter, presence: true
   paginates_per 7
   default_scope { alphabethic }
   QUERY_STRING = "(lower(sepulchres.name) LIKE ? OR lower(sepulchres.surname) LIKE ? OR lower(sepulchres.family_name) LIKE ? OR lower(sepulchres.birth_date) LIKE ? OR lower(sepulchres.burial_date) LIKE ? OR lower(sepulchres.complex) LIKE ? OR lower(sepulchres.profession) LIKE ?)"
