@@ -24,6 +24,6 @@ class Sepulchre < ActiveRecord::Base
   protected
 
   def self.get_keywords value
-    value.split(/\s+/).map { |keyword| "%#{keyword.gsub("*", "%").downcase}%" }
+    value.split(/\s+/).map { |keyword| keyword.gsub("*", "%").downcase }
   end
 end

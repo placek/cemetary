@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "rails"
 gem "jquery-rails"
+gem "jquery-ui-rails"
 gem "jbuilder"
 gem "capistrano"
 gem "activeadmin", github: "gregbell/active_admin"
@@ -39,4 +40,5 @@ group :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
 end
+
 ruby "2.0.0"

@@ -5,10 +5,8 @@ $ ->
 
   $(".sepulchres .results dt").mouseover ->
     $("#quarters_" + $(this).attr("data-quarters")).css({ fill: "#c2e0c2", stroke: "#009933" })
-    true
 
   $(".sepulchres .results dt").mouseout ->
     $("#quarters_" + $(this).attr("data-quarters")).css({ fill: "#eeeeee", stroke: "#cccccc" })
-    true
 
-  true
+  $(document).tooltip({ position: { my: "right middle", at: "left+500 middle" }})
