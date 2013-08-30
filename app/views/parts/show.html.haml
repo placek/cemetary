@@ -15,7 +15,7 @@
   %section.sepulchres
     %header
       = form_tag part_path(@part), method: :get do
-        = text_field_tag :search, params[:search]
+        = search_field_tag :search, params[:search]
         = submit_tag t("links.search")
 
     %section.results
