@@ -9,8 +9,6 @@
     %li= link_to quarter.name, part_quarter_path(@part, quarter), id: "quarter_link_#{quarter.name}"
 
 %section.part
-  %figure.map
-    = render file: @part.map
 
   %section.sepulchres
     %header
@@ -36,4 +34,7 @@
                 = link_to "kwatera #{sepulchre.quarter.name}", part_quarter_path(@part, sepulchre.quarter)
             %dd= truncate(strip_tags(sepulchre.description), length: 100)
       = paginate @sepulchres
+
+  %figure.map
+    = render file: @part.map
     .clear

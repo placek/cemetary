@@ -5,12 +5,6 @@
     = @quarter.name
 
 %section.quarter
-  - if map = @quarter.map
-    %figure.map
-      = render file: map
-  - else
-    %figure.map{ style: "border: 1px solid #ccc; line-height: 500px" }
-      Brak mapy
 
   %section.sepulchres
     %header
@@ -36,4 +30,11 @@
                 = link_to "kwatera #{sepulchre.quarter.name}", part_quarter_path(@part, sepulchre.quarter)
             %dd= truncate(strip_tags(sepulchre.description), length: 100)
       = paginate @sepulchres
+
+  - if map = @quarter.map
+    %figure.map
+      = render file: map
+  - else
+    %figure.map{ style: "border: 1px solid #ccc; line-height: 500px" }
+      Brak mapy
     .clear
