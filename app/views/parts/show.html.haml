@@ -34,6 +34,7 @@
                 = link_to "kwatera #{sepulchre.quarter.name}", part_quarter_path(@part, sepulchre.quarter)
             %dd= truncate(strip_tags(sepulchre.description), length: 100)
       = paginate @sepulchres
+    .clear
 
   %figure.map
     = render file: @part.map
