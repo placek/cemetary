@@ -5,7 +5,7 @@ class Sepulchre < ActiveRecord::Base
   delegate :part, to: :quarter
   validates :name, :surname, :quarter, presence: true
   paginates_per 7
-  default_scope order: "description DESC, surname, name, burial_date"
+  default_scope order: "description, surname, name, burial_date"
   QUERY_STRING = "(lower(sepulchres.name) LIKE ? OR lower(sepulchres.surname) LIKE ? OR lower(sepulchres.family_name) LIKE ? OR lower(sepulchres.birth_date) LIKE ? OR lower(sepulchres.burial_date) LIKE ? OR lower(sepulchres.complex) LIKE ? OR lower(sepulchres.profession) LIKE ?)"
 
   scope :search, ->(value) do
