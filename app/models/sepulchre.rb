@@ -11,7 +11,7 @@ class Sepulchre < ActiveRecord::Base
   scope :search, ->(value) do
     if value.present?
       keywords = get_keywords(value)
-      query = ([QUERY_STRING] * keywords.count).join(" AND ")
+      query = ([QUERY_STRING] * keywords.count).join(" OR ")
       where(query, *(keywords.map { |keyword| [keyword] * 7 }.flatten))
     end
   end
