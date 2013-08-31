@@ -9,7 +9,7 @@ $ ->
   $(".sepulchres .results dt").mouseout ->
     $("#quarters_" + $(this).attr("data-quarters")).css({ fill: "#eeeeee", stroke: "#cccccc" })
 
-  $(document).tooltip({ position: { my: "right middle", at: "left+500 middle" }})
+  $(document).tooltip({ position: { my: "right middle", at: "left+1 middle" }})
 
   $("#search").autocomplete({
       minLength: 3,

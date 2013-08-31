@@ -6,7 +6,7 @@ $ ->
   $(".sepulchres .results dt").mouseout ->
     $("#" + $(this).attr("data-number")).css({ fill: "#eeeeee", stroke: "#cccccc" })
 
-  $(document).tooltip({ position: { my: "right middle", at: "left+500 middle" }})
+  $(document).tooltip({ position: { my: "right middle", at: "left+1 middle" }})
 
   $("#search").autocomplete({
       minLength: 3,
