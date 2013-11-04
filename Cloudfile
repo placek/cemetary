@@ -8,5 +8,8 @@ cemetery:
     app1:
       size: small
       thin: 1
+      domains:
+        - starycmentarz.org
+        - www.starycmentarz.org
       databases:
         - postgresql
